@@ -14,7 +14,7 @@ Please note and be aware that parts of these instructions are intentionally vagu
 ## Part One - Model Objects and Mars Rover Client
 
 #### Models Objects:
-You will need three model objects in this project. First, a model representing a Mars rover, second, a photo that a rover took, and third, a description of each [sol](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Sols).
+You will need three model objects in this project. First, a model representing a Mars rover, second, a photo that a rover took, and third, a description of each [sol](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Sols). Take the time to look through the documentation for the API [here](https://api.nasa.gov/api.html#MarsPhotos). It will be essential that you can navigate and know how to find the information needed from the API in these next steps, again as the instructions are intentionally vague. 
 
 
 Create a new Cocoa Touch subclass of `NSObject` for each of these three model objects.
@@ -66,7 +66,7 @@ Look [here](http://rypress.com/tutorials/objective-c/blocks) and [here](http://w
 
 ### MarsRoverClient.m:
 
-Take the time to look through the documentation for the API [here](https://api.nasa.gov/api.html#MarsPhotos). It will be essential that you can navigate and know how to find the information needed from the API in these next steps, again as the instructions are intentionally vague.
+There is an APIKeys.plist file in your project. Go to NASA's API documentation [here](https://api.nasa.gov/#live_example) and go through the process to get an API key. Once you're done, add the API key to the plist file as the value, and make the key `"APIKey"`. You will use this in the client later.
 
 #### Private methods:
 
