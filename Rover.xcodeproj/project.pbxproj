@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		46E1D4FE1E65DCEB00DDAF9A /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46E1D4FD1E65DCEB00DDAF9A /* APIKeys.plist */; };
+		6BB09E851EB8E53D00F0F27F /* DMNRover.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB09E841EB8E53D00F0F27F /* DMNRover.m */; };
+		6BB09E881EB8E66500F0F27F /* DMNPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB09E871EB8E66500F0F27F /* DMNPhoto.m */; };
+		6BB09E8B1EB8E7D700F0F27F /* DMNSolDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB09E8A1EB8E7D700F0F27F /* DMNSolDescription.m */; };
+		6BB09E8F1EB8E8DF00F0F27F /* DMNMarsRoverClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB09E8E1EB8E8DF00F0F27F /* DMNMarsRoverClient.m */; };
 		9DE7D67F1E4E26CF004CBBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */; };
 		9DE7D6801E4E26CF004CBBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6741E4E26CF004CBBD8 /* LaunchScreen.storyboard */; };
 		9DE7D6811E4E26CF004CBBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE7D6761E4E26CF004CBBD8 /* Main.storyboard */; };
@@ -17,6 +21,14 @@
 
 /* Begin PBXFileReference section */
 		46E1D4FD1E65DCEB00DDAF9A /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
+		6BB09E831EB8E53D00F0F27F /* DMNRover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNRover.h; sourceTree = "<group>"; };
+		6BB09E841EB8E53D00F0F27F /* DMNRover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNRover.m; sourceTree = "<group>"; };
+		6BB09E861EB8E66500F0F27F /* DMNPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNPhoto.h; sourceTree = "<group>"; };
+		6BB09E871EB8E66500F0F27F /* DMNPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNPhoto.m; sourceTree = "<group>"; };
+		6BB09E891EB8E7D700F0F27F /* DMNSolDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNSolDescription.h; sourceTree = "<group>"; };
+		6BB09E8A1EB8E7D700F0F27F /* DMNSolDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNSolDescription.m; sourceTree = "<group>"; };
+		6BB09E8D1EB8E8DF00F0F27F /* DMNMarsRoverClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNMarsRoverClient.h; sourceTree = "<group>"; };
+		6BB09E8E1EB8E8DF00F0F27F /* DMNMarsRoverClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNMarsRoverClient.m; sourceTree = "<group>"; };
 		9DE7D6581E4E26AC004CBBD8 /* Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE7D6731E4E26CF004CBBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DE7D6751E4E26CF004CBBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BB09E8C1EB8E8C200F0F27F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6BB09E8D1EB8E8DF00F0F27F /* DMNMarsRoverClient.h */,
+				6BB09E8E1EB8E8DF00F0F27F /* DMNMarsRoverClient.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		9DE7D64F1E4E26AC004CBBD8 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +95,7 @@
 				9DE7D68A1E4E2704004CBBD8 /* Model */,
 				9DE7D68B1E4E2705004CBBD8 /* Model Controllers */,
 				9DE7D68C1E4E2705004CBBD8 /* View Controllers */,
+				6BB09E8C1EB8E8C200F0F27F /* Networking */,
 				9DE7D6891E4E2702004CBBD8 /* Views */,
 				9DE7D6871E4E26E7004CBBD8 /* Supporting Files */,
 			);
@@ -107,6 +129,12 @@
 		9DE7D68A1E4E2704004CBBD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BB09E831EB8E53D00F0F27F /* DMNRover.h */,
+				6BB09E841EB8E53D00F0F27F /* DMNRover.m */,
+				6BB09E861EB8E66500F0F27F /* DMNPhoto.h */,
+				6BB09E871EB8E66500F0F27F /* DMNPhoto.m */,
+				6BB09E891EB8E7D700F0F27F /* DMNSolDescription.h */,
+				6BB09E8A1EB8E7D700F0F27F /* DMNSolDescription.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,7 +185,7 @@
 				TargetAttributes = {
 					9DE7D6571E4E26AC004CBBD8 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 357NQPN89X;
+						DevelopmentTeam = CTJ2VR37F9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,8 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB09E8F1EB8E8DF00F0F27F /* DMNMarsRoverClient.m in Sources */,
 				9DE7D6841E4E26CF004CBBD8 /* main.m in Sources */,
 				9DE7D6831E4E26CF004CBBD8 /* DMNRoverAppDelegate.m in Sources */,
+				6BB09E881EB8E66500F0F27F /* DMNPhoto.m in Sources */,
+				6BB09E8B1EB8E7D700F0F27F /* DMNSolDescription.m in Sources */,
+				6BB09E851EB8E53D00F0F27F /* DMNRover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 357NQPN89X;
+				DEVELOPMENT_TEAM = CTJ2VR37F9;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevMountain.Rover;
@@ -332,7 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 357NQPN89X;
+				DEVELOPMENT_TEAM = CTJ2VR37F9;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevMountain.Rover;
