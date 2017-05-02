@@ -163,7 +163,9 @@
         //^^ Creates an empty dictionary.
         
         if (!jsonDict || ![jsonDict isKindOfClass:[NSDictionary class]] ||
+            
             !(manifest = jsonDict[@"photo_manifest"])) {
+            //^^ This is assigning manifest to be equal to jsonDict[@"photo_manifest"]
             
             NSDictionary *userInfo = nil;
             
@@ -176,9 +178,8 @@
             //^^ This part creates localErrors and sends it back up through the completion if the data was not correct.
         }
         
-        completion([[DMNRover alloc] initWithDictionary:jsonDict], nil);
-        //SIDE NOTE: I had maniFest there initially.
-        // ^^ Wouldn't this be passing in an empty dictionary? Wouldn't this suppose to be filled with the data?
+        completion([[DMNRover alloc] initWithDictionary:manifest], nil);
+        //^^ This is initializing a DMNRover with the manifest dictionary.
     }] resume];
 }
 
