@@ -12,8 +12,8 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-@property (nonatomic, readonly) NSInteger *photoID;
-@property (nonatomic, readonly) NSInteger *solDate;
+@property (nonatomic, readonly) NSInteger photoID;
+@property (nonatomic, readonly) NSInteger solDate;
 @property (nonatomic, strong, readonly) NSString *cameraName;
 @property (nonatomic, strong, readonly) NSDate *earthDate;
 

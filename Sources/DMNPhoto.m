@@ -54,4 +54,9 @@
     return YES;
 }
 
+- (NSUInteger)hash
+{
+    return (NSUInteger)self.photoID;
+}
+
 @end

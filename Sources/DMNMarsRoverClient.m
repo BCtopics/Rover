@@ -125,15 +125,73 @@
 
 -(void)fetchPhotoDataForPhoto:(DMNPhoto *)photo completion:(void (^)(NSData *, NSError *))completion
 {
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:photo.photoURL resolvingAgainstBaseURL:YES];
+    urlComponents.scheme = @"https";
+    NSURL *imageURL = urlComponents.URL;
     
+    [[[NSURLSession sharedSession] dataTaskWithURL:imageURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            return completion(nil, error);
+        }
+        
+        if (!data) {
+            return completion(nil, [NSError errorWithDomain:@"Invalid Domain" code:-1 userInfo:nil]);
+        }
+        
+        completion(data, nil);
+    }] resume];
 }
 
 
 
 -(void)fetchPhotosFromRover:(DMNRover *)rover onSol:(NSInteger)sol completion:(void (^)(NSArray *, NSError *))completion
 {
+    if (!rover){
+        NSLog(@"%s called with a nil rover.", __PRETTY_FUNCTION__);
+        return completion(nil, [NSError errorWithDomain:@"Invalid Domain" code:-2 userInfo:nil]);
+    }//^^ Checks to make sure that rover is actually there. If rover is not AKA nil then it will return an error saying Invalid Domain.
     
-}
+    NSURL *url = [[self class] urlForPhotosFromRover:rover.name onSol:sol];
+    //^^ This creates a url to be passed into the NSURlSession below with the corect paramaters.
+    
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        
+        if (error) {
+            return completion(nil, error);
+        }// ^^ Checks to make sure that there is not an error. If there is an error it will return nil/the error.
+        
+        if (!data) {
+            return completion(nil, [NSError errorWithDomain:@"Invalid Domain" code:-1 userInfo:nil]);
+        }//^^ This makes sure that there is data. If there is not then it will return an error/InvalidDomain.
+        
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        //^^ Creates a json dictionary from the data we get back.
+        
+        if (!jsonDict || ![jsonDict isKindOfClass:[NSDictionary class]]) {
+            //^^ Checks to make sure that jsonDict is an NSDictionary and that it exists/has data.
+            NSDictionary *userInfo = nil;
+            if (error) { userInfo = @{NSUnderlyingErrorKey : error}; }
+            NSError *localError = [NSError errorWithDomain:@"Invalid Domain" code:-1 userInfo:userInfo];
+            return completion(nil, localError);
+            //^^ Returns an error is there are any problems.
+        }
+        
+        NSArray *photoDictionaries = jsonDict[@"photos"];
+        //^^ Goes another layer down, or "drills down".
+        
+        NSMutableArray *photos = [NSMutableArray array];
+        //^^ Creates the array that will house the photos.
+        
+        for (NSDictionary *dict in photoDictionaries) {
+            DMNPhoto *photo = [[DMNPhoto alloc] initWithDictionary:dict];
+            if (!photo) { continue; }
+            [photos addObject:photo];
+            //^^ This puts all the photos from photoDictionaries in a new dictionary called dict. Then initializes thoe photos through the initWithDictionary function.
+        }
+        completion(photos, nil);
+        //^^ Throws the photos back up through the completion.
+    }] resume];}
 
 
 
