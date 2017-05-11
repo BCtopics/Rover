@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DMNRover;
+
 @interface DMNSolsTableViewController : UITableViewController
+
+@property (nonatomic, strong) DMNRover *rover;
 
 @end

@@ -67,7 +67,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="FZf-6p-TJJ" kind="show" id="cx0-JG-wFJ"/>
+                                    <segue destination="FZf-6p-TJJ" kind="show" identifier="ToPhotos" id="cx0-JG-wFJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -81,7 +81,7 @@
     if ([segue.identifier isEqualToString:@"ShowSolsSegue"]) {
         DMNSolsTableViewController *destinationVC = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        destinationVC.rover = self.rovers[indexPath.row]; Add this later.
+        destinationVC.rover = self.rovers[indexPath.row];
     }
 }
 
